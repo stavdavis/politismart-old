@@ -1,30 +1,30 @@
 import {
-    SEARCH_CHARACTERS_REQUEST,
-    SEARCH_CHARACTERS_SUCCESS,
-    SEARCH_CHARACTERS_ERROR
+    SEARCH_LAWMAKERS_REQUEST,
+    SEARCH_LAWMAKERS_SUCCESS,
+    SEARCH_LAWMAKERS_ERROR
 } from './actions';
 
 const initialState = {
-    characters: [],
+    lawmakers: [],
     loading: false,
     error: null
 };
 
-export function characterReducer(state=initialState, action) {
-    if (action.type === SEARCH_CHARACTERS_REQUEST) {
+export function lawmakerReducer(state=initialState, action) {
+    if (action.type === SEARCH_LAWMAKERS_REQUEST) {
         return Object.assign({}, state, {
             loading: true,
             error: null
         });
     }
-    else if (action.type === SEARCH_CHARACTERS_SUCCESS) {
+    else if (action.type === SEARCH_LAWMAKERS_SUCCESS) {
         return Object.assign({}, state, {
-            characters: action.characters,
+            lawmakers: action.lawmakers,
             loading: false,
             error: null
         });
     }
-    else if (action.type === SEARCH_CHARACTERS_ERROR) {
+    else if (action.type === SEARCH_LAWMAKERS_ERROR) {
         return Object.assign({}, state, {
             error: action.error,
             loading: false

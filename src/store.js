@@ -1,8 +1,8 @@
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
-import {characterReducer} from './reducers';
+import {lawmakerReducer} from './reducers';
 
 export default createStore(
-    characterReducer,
+    lawmakerReducer,
     applyMiddleware(thunk)
 );

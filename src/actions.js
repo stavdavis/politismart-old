@@ -17,9 +17,11 @@ export const searchLawmakersError = error => ({
     error
 });
 
-export const searchLawmakers = name => dispatch => {
+//searchFields below is an object of search fields, obtained from checkbox selections (eg: {gunControl: 100, proLife: 0})
+export const searchLawmakers = searchFields => dispatch => {
     dispatch(searchLawmakersRequest());
-    search(name)
+    //input below is an object of search fields, obtained from checkbox selections (eg: {gunControl: 100, proLife: 0})
+    search(searchFields)
         .then(lawmakers => dispatch(searchLawmakersSuccess(lawmakers)))
         .catch(error => dispatch(searchLawmakersError(error)));
 };

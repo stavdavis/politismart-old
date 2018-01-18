@@ -6,6 +6,7 @@ import {
 
 const initialState = {
     lawmakers: [],
+    lawmakerCount: 0,
     loading: false,
     error: null
 };
@@ -20,6 +21,7 @@ export function lawmakerReducer(state=initialState, action) {
     else if (action.type === SEARCH_LAWMAKERS_SUCCESS) {
         return Object.assign({}, state, {
             lawmakers: action.lawmakers,
+            lawmakerCount: action.lawmakers.length,
             loading: false,
             error: null
         });

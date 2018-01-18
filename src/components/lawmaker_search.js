@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Spinner from 'react-spinkit';
 import {searchLawmakers} from '../actions';
+import PickSwitch from './pick_switch';
 
 export class LawmakerSearch extends React.Component {
     renderResults() {
@@ -18,25 +19,36 @@ export class LawmakerSearch extends React.Component {
         );
 
         return (
-            <ul className="lawmaker-search-results">
-                {lawmakers}
-            </ul>
+            <div className="results-area">
+                <div className="lawmaker-count">Number of matching lawmakers: {lawmakers.length}</div>
+                <ul className="lawmaker-search-results">
+                    {lawmakers}
+                </ul>
+            </div>
         );
     }
 
-    //support function: start a search upon submission of the form
-    search(e) {
-        e.preventDefault();
-        this.props.dispatch(searchLawmakers(this.input.value));
-    }
-
+    //searchLawmakers below takes an input that is an object of search fields, 
+    //obtained from the PickSwitches selections (eg: {gunControl: 100, proLife: 0})
     render() {
         return (
             <div className="lawmaker-search">
-                <form onSubmit={(e) => this.search(e)}>
-                    <input type="search" ref={input => this.input = input} />
-                    <button>Search</button>
-                </form>
+                <PickSwitch 
+                    title="Gun control" 
+                    onChange={(e) => this.props.dispatch(searchLawmakers({"gunControl": e}))} />
+                <PickSwitch 
+                    title="Pro life" 
+                    onChange={(e) => this.props.dispatch(searchLawmakers({"proLife": e}))} />
+                <PickSwitch 
+                    title="Gay marriage" 
+                    onChange={(e) => this.props.dispatch(searchLawmakers({"gayMarriage": e}))} />
+                <PickSwitch 
+                    title="Clean energy" 
+                    onChange={(e) => this.props.dispatch(searchLawmakers({"cleanEnergy": e}))} />
+                <PickSwitch 
+                    title="Small government" 
+                    onChange={(e) => this.props.dispatch(searchLawmakers({"smallGovernment": e}))} />
+
                 <ul className="lawmaker-search-results">
                     {this.renderResults()}
                 </ul>

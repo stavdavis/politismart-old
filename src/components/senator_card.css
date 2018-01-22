@@ -1,0 +1,48 @@
+.card-container{
+	width: 113px;
+	display: inline-block;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 2px;
+	font-size: 10px;
+	padding: 3px;
+	padding-top: 1px;
+}
+
+.senator-pic-box, .senator-name, .party-state {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.senator-pic-box {
+	width: 30%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.senator-pic {
+	width: 100%;
+	padding: 1px;
+}
+
+.score-guns-title, 
+.score-pro-life-title, 
+.score-lgbt-title, 
+.score-clean-energy-title, 
+.score-small-gov-title,
+.score-donation-impact-title {
+	display: inline-block;
+	width: 75%;
+}
+
+.score-guns-value, 
+.score-pro-life-value, 
+.score-lgbt-value, 
+.score-clean-energy-value, 
+.score-small-gov-value,
+.score-donation-impact-value {
+	display: inline-block;
+	width: 25%;
+	text-align: right;
+}

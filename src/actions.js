@@ -22,7 +22,7 @@ export const searchLawmakers = searchFields => dispatch => {
     dispatch(searchLawmakersRequest());
     //input below is an object of search fields, obtained from checkbox selections (eg: {gunControl: 100, proLife: 0})
     search(searchFields)
-        .then(lawmakers => dispatch(searchLawmakersSuccess(lawmakers)))
+        .then(lawmakers => dispatch(searchLawmakersSuccess(lawmakers))) //returns an updated state with the new lawmaker results
         .catch(error => dispatch(searchLawmakersError(error)));
 };
 

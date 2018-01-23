@@ -36,9 +36,12 @@ export class LawmakerSearch extends React.Component {
         );
         // console.log(this.props.lawmakers);
 
+        let matchCount = (lawmakers.length === 0) ? "" : lawmakers.length;
+
         return (
             <div className="results-area">
-                <div className="lawmaker-count">{lawmakers.length} matching lawmakers (highest re-election risk first): </div>
+                <div className="lawmaker-count">Matching lawmakers: {matchCount}</div>
+                <div className="result-sort-message"><i>Showing highest re-election risk first</i></div>
                 <div className="lawmaker-search-results">
                     {lawmakers}
                 </div>
@@ -58,6 +61,9 @@ export class LawmakerSearch extends React.Component {
     render() {
         return (
             <div className="lawmaker-search">
+                <div className="upper-arrows-container">
+                    &#9664; Oppose &#11835; Support &#9654;
+                </div>
                 <PickSwitch 
                     title="Gun control" 
                     onChange={(e) => { 

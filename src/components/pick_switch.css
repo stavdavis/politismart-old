@@ -14,9 +14,11 @@
 
 /* The slider itself */
 .slider {
+    border: 1px solid black;
+    border-radius: 5px;
     display: inline;
     position: absolute;
-    right: 25px;
+    right: 3.5%;
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
     width: 30%; /* Full-width */
@@ -38,15 +40,20 @@
     -webkit-appearance: none; /* Override default look */
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #4CAF50; /* Green background */
+    height: 32px; /* Slider handle height */
+    background: darkorange;/*#4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
-}
+    border: 1px solid black;
+    border-radius: 2px;
+    }
 
 .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #4CAF50; /* Green background */
+    height: 32px; /* Slider handle height */
+    background: darkorange; /* Green background */
     cursor: pointer; /* Cursor on hover */
+    border: 1px solid black;
+    border-radius: 2px;
+
 }
 

@@ -1,47 +1,39 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import CSSTransition from 'react-transition-group';
+//Based on:
+//Don't forget to import bootstraps' basic css file into the main index.html
+//<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+import React from 'react';
+import { Nav, Navbar, NavItem } from 'react-bootstrap';
 import './nav-bar.css';
-let myCSSTransitionComponent = CSSTransition;
 
-export default class DropDownMenu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.toggleMenu = this.toggleMenu.bind(this);
-    this.state = {
-      menuActive: false
-    };
-  }
+// import { connect } from 'react-redux';
+// import { hashHistory } from 'react-router';
+// import * as syncActionCreators from '../../actions/sync.js';
+// import * as postActionCreators from '../../actions/post_request.js';
 
-  toggleMenu() {
-    let menuState = !this.state.menuActive;
-    this.setState({
-      menuActive: menuState
-    });
-  }
+export default class MainNavBar extends React.Component {
 
   render() {
-    let menu;
-    if(this.state.menuActive) {
-      menu = <div>
-                <ul>
-                  <li><a href="/about">About</a></li>
-                  <li><a href="/findLawmakers">Find your optimal lawmakers</a></li>
-                  <li><a href="/contributions">Optimize your contributions - coming soon</a></li>
-                  <li><a href="/stats">Stats - coming soon</a></li>
-                  <li><a href="/signup">Login - coming soon</a></li>
-                </ul>
-              </div>
-    } else {
-      menu = "";
-    }
-    return ( 
-      <div id = "menu">
-        <button className="menu-button" onClick = { this.toggleMenu } value="menu">&#9776;</button>
-      <myCSSTransitionComponent transitionName="menu" transitionEnterTimeout={1000} transitionLeaveTimeout={1000}> 
-        {menu} 
-      </myCSSTransitionComponent>
-    </div>
-    )
+    let rightNavLinks = (
+      <Nav>
+        <NavItem className="navbar-app-link" href="#about">About</NavItem>
+        <NavItem className="navbar-app-link" href="#findLawmakers">Find lawmakers</NavItem>
+        <NavItem className="navbar-app-link" href="#contribute">Optimize contributions</NavItem>
+        <NavItem className="navbar-app-link" href="#stats">Stats</NavItem>
+        <NavItem className="navbar-app-link" href="#signup">Sign up</NavItem>
+      </Nav>
+    );
+    return (
+      <Navbar className="navbar-app" collapseOnSelect>
+        <Navbar.Header>
+          <Navbar.Toggle />
+          <Navbar.Brand>
+            <a className="app-name" href="#findLawmakers">Politismart</a>
+          </Navbar.Brand>
+        </Navbar.Header>
+        <Navbar.Collapse>
+          {rightNavLinks}
+        </Navbar.Collapse>
+      </Navbar>
+    );
   }
 }

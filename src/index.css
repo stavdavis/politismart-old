@@ -4,47 +4,111 @@ body {
   font-family: sans-serif;
 }
 
-.instructions-and-results {
-	width: 70%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 70px;
-}
-
 h1 {
-	font-size: 2vw;
+	font-family: Righteous;
+	font-weight: bold;
+	font-size: 30px;
 	margin-bottom: 0;
 }
 
+@media screen and (max-width: 480px) {
+	h1 {
+		font-size: 25px;
+	}
+}
+
 h2 {
-	font-size: 1vw;
+	font-size: 22px;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+@media screen and (max-width: 480px) {
+	h2 {
+		font-size: 18px;
+	}
+}
+
+h3 {
+	font-size: 20px;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+	h3 {
+		font-size: 16px;
+	}
+}
+
+h4 {
+	font-size: 15px;
 	font-weight: normal;
 	margin-top: 0;
 }
 
-.top-bar {
-	background-color: #2c3e50;
-	height: 50px;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	z-index: 1;
-}
-
-.site-logo {
-	font-family: Righteous;
-	font-size: 40px;
-	display: inline-block;
-	color: white;
-	position: fixed;
-	top: 0;
-	left: 60px;
+@media screen and (max-width: 480px) {
+	h4 {
+		font-size: 12px;
+	}
 }
 
 .menu-container {
 	display: inline-block;
 	position: fixed;
 	top: 0;
-	left: 10px;
+	left: 0;
 	padding-top: 3px;
+	z-index: 999;
+}
+
+.main-page-sections {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 100px;	
+}
+
+@media screen and (max-width: 480px) {
+	.main-page-sections {
+		width: 95%;
+		padding-top: 60px;
+	}
+}
+
+.text-box {
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+@media screen and (max-width: 480px) {
+	.text-box {
+		font-size: 13px;
+		margin-top: 10px;
+	}
+}
+
+.instructions-and-results {
+	margin-bottom: 75px;
+}
+
+@media screen and (max-width: 480px) {
+	.instructions-and-results {
+		margin-bottom: 100px;
+	}
+}
+
+.about-image {
+	mix-blend-mode: multiply;
+	width: 75%;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+
+@media screen and (max-width: 480px) {
+	.about-image {
+		width: 100%;
+
+	}
 }

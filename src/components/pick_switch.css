@@ -8,6 +8,12 @@
     margin-top: 20px;
 }
 
+@media screen and (min-width: 480px) {
+    .slidecontainer {
+        width: 50%;
+    }
+}
+
 .slider-title {
     display: inline;
 }
@@ -16,12 +22,12 @@
 .slider {
     border: 1px solid black;
     border-radius: 5px;
-    display: inline;
-    position: absolute;
-    right: 3.5%;
+    display: inline !important;
+    position: absolute !important;
+    right: 0 !important;
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
-    width: 30%; /* Full-width */
+    width: 130px !important; /* Full-width */
     height: 25px; /* Specified height */
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */

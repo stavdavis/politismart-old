@@ -1,17 +1,11 @@
-//Based on:
+//Based on: https://github.com/hjmccain/maplyful
 //Don't forget to import bootstraps' basic css file into the main index.html
 //<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
 import React from 'react';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
 import './nav-bar.css';
 
-// import { connect } from 'react-redux';
-// import { hashHistory } from 'react-router';
-// import * as syncActionCreators from '../../actions/sync.js';
-// import * as postActionCreators from '../../actions/post_request.js';
-
 export default class MainNavBar extends React.Component {
-
   render() {
     let rightNavLinks = (
       <Nav>

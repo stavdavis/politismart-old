@@ -6,6 +6,6 @@ body {
 @media screen and (max-width: 480px) {
     body {
         background: url('mobile-background-low-res.jpg') no-repeat center center fixed;
-        background-size: 150% 100%;
+        background-size: 150%;
     }
 }

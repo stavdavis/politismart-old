@@ -47,19 +47,18 @@
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
     height: 32px; /* Slider handle height */
-    background: darkorange;
+    background: #2c3e50; 
     cursor: pointer; /* Cursor on hover */
     border: 1px solid black;
-    border-radius: 2px;
+    border-radius: 3px;
     }
 
 .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 32px; /* Slider handle height */
-    background: darkorange; 
+    background: #2c3e50; 
     cursor: pointer; /* Cursor on hover */
     border: 1px solid black;
-    border-radius: 2px;
+    border-radius: 3px;
 
 }
-

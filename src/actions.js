@@ -26,3 +26,10 @@ export const searchLawmakers = searchFields => dispatch => {
         .catch(error => dispatch(searchLawmakersError(error)));
 };
 
+
+export const UPDATE_SEARCH_OBJECT = 'UPDATE_SEARCH_OBJECT';
+export const updateSearchObject = (key, value) => ({
+    type: UPDATE_SEARCH_OBJECT,
+    key,   //= key: key
+    value
+})

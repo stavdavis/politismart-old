@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import LawmakerSearch from './components/lawmaker_search';
-// import DropDownMenu from './components/nav-bar-old';
 import MainNavBar from './components/nav-bar';
 import NewsletterSignupForm from './components/newsletter-signup-form';
 import aboutPolitismart from './about-politismart.png';

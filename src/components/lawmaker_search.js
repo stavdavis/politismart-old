@@ -1,26 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Spinner from 'react-spinkit';
-import {searchLawmakers} from '../actions';
+import {searchLawmakers, updateSearchObject} from '../actions';
 import PickSwitch from './pick_switch';
 import SenatorCard from './senator_card';
 import './lawmaker_search.css';
 
 export class LawmakerSearch extends React.Component {
-    constructor(props) {
-        super(props);
-        //TODO: change this. Added this state to the state in the store, which is converted to props below
-        this.state = {
-            searchObject: {
-                //0=anti; 1=indifferent; 2=pro
-                gunControl: 1, 
-                proLife: 1, 
-                gayMarriage: 1, 
-                cleanEnergy: 1, 
-                smallGovernment: 1
-            }
-        }
-    }
 
     renderResults() {
         if (this.props.loading) {
@@ -51,8 +37,7 @@ export class LawmakerSearch extends React.Component {
     
     //updating the search string for the API request, with every change to ANY pickSwitch
     updateSearchObject(key, value) {
-        //using setState is the proper way to do this: this.state.searchObject.smallGovernment = value;
-        this.setState({searchObject: Object.assign(this.state.searchObject, {[key] : value}) }) 
+        this.props.dispatch(updateSearchObject(key, value));
     }
 
     //searchLawmakers below takes an input that is an object of search fields, 
@@ -68,7 +53,7 @@ export class LawmakerSearch extends React.Component {
                     title="Gun control" 
                     onChange={(e) => { 
                         this.updateSearchObject("gunControl", e);
-                        this.props.dispatch(searchLawmakers(this.state.searchObject))
+                        this.props.dispatch(searchLawmakers(this.props.searchObject))
                         }
                     } 
                 />
@@ -76,7 +61,7 @@ export class LawmakerSearch extends React.Component {
                     title="Pro life" 
                     onChange={(e) => { 
                         this.updateSearchObject("proLife", e);
-                        this.props.dispatch(searchLawmakers(this.state.searchObject))
+                        this.props.dispatch(searchLawmakers(this.props.searchObject))
                         }
                     } 
                 />
@@ -84,7 +69,7 @@ export class LawmakerSearch extends React.Component {
                     title="LGBTQ rights" 
                     onChange={(e) => {
                         this.updateSearchObject("gayMarriage", e);
-                        this.props.dispatch(searchLawmakers(this.state.searchObject))
+                        this.props.dispatch(searchLawmakers(this.props.searchObject))
                         }
                     } 
                 />
@@ -92,7 +77,7 @@ export class LawmakerSearch extends React.Component {
                     title="Clean energy" 
                     onChange={(e) => {
                         this.updateSearchObject("cleanEnergy", e);                        
-                        this.props.dispatch(searchLawmakers(this.state.searchObject))
+                        this.props.dispatch(searchLawmakers(this.props.searchObject))
                         }
                     } 
                 />
@@ -100,7 +85,7 @@ export class LawmakerSearch extends React.Component {
                     title="Small government" 
                     onChange={(e) => {
                         this.updateSearchObject("smallGovernment", e);                        
-                        this.props.dispatch(searchLawmakers(this.state.searchObject))
+                        this.props.dispatch(searchLawmakers(this.props.searchObject))
                         }
                     } 
                 />
@@ -116,7 +101,8 @@ export class LawmakerSearch extends React.Component {
 const mapStateToProps = state => ({
     lawmakers: state.lawmakers,
     loading: state.loading,
-    error: state.error
+    error: state.error,
+    searchObject: state.searchObject
 });
 
 export default connect(mapStateToProps)(LawmakerSearch);

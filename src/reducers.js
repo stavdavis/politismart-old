@@ -1,14 +1,23 @@
 import {
     SEARCH_LAWMAKERS_REQUEST,
     SEARCH_LAWMAKERS_SUCCESS,
-    SEARCH_LAWMAKERS_ERROR
+    SEARCH_LAWMAKERS_ERROR,
+    UPDATE_SEARCH_OBJECT
 } from './actions';
 
 const initialState = {
     lawmakers: [],
     lawmakerCount: 0,
     loading: false,
-    error: null
+    error: null,
+    searchObject: {
+        //0=anti; 1=indifferent; 2=pro
+        gunControl: 1, 
+        proLife: 1, 
+        gayMarriage: 1, 
+        cleanEnergy: 1, 
+        smallGovernment: 1
+    }
 };
 
 export function lawmakerReducer(state=initialState, action) {
@@ -31,6 +40,11 @@ export function lawmakerReducer(state=initialState, action) {
             error: action.error,
             loading: false
         });
+    }
+    else if (action.type === UPDATE_SEARCH_OBJECT) {
+        return Object.assign({}, state, {
+            searchObject: Object.assign(state.searchObject, {[action.key] : action.value})
+        })
     }
     return state;
 }

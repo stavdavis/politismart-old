@@ -43,7 +43,7 @@ export function lawmakerReducer(state=initialState, action) {
     }
     else if (action.type === UPDATE_SEARCH_OBJECT) {
         return Object.assign({}, state, {
-            searchObject: Object.assign(state.searchObject, {[action.key] : action.value})
+            searchObject: {[action.key] : action.value}
         })
     }
     return state;

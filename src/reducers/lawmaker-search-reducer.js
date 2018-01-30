@@ -3,7 +3,7 @@ import {
     SEARCH_LAWMAKERS_SUCCESS,
     SEARCH_LAWMAKERS_ERROR,
     UPDATE_SEARCH_OBJECT
-} from './actions';
+} from '../actions';
 
 const initialState = {
     lawmakers: [],

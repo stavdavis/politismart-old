@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import LawmakerSearch from './components/lawmaker_search';
 import MainNavBar from './components/nav-bar';
-import NewsletterSignupForm from './components/newsletter-signup-form';
+import RegistrationForm from './components/registration_form';
+// import NewsletterSignupForm from './components/newsletter-signup-form';
 import aboutPolitismart from './about-politismart.png';
 import store from './store';
+import authStore from './auth-store'
 import './index.css';
 
 ReactDOM.render(
@@ -34,7 +36,7 @@ ReactDOM.render(
 				What if you support same-sex marriage, but don't believe in clean energy?<br/>
 				Turns out, there are plenty of lawmakers who don't fall into simple	buckets.
 				<h3>PolitiSmart helps you find them.</h3>
-				<img className="about-image" src={aboutPolitismart} />
+				<img className="about-image" src={aboutPolitismart} alt="process diagram"/>
 			</div>
 		</div>
 
@@ -62,8 +64,10 @@ ReactDOM.render(
 		</div>
 
 		<div id="signup" className="main-page-sections signup-section">
-			<h1>Sign up for updates</h1>
-			<NewsletterSignupForm />
+			<h1>Login/Register</h1>
+		    <Provider store={authStore}>
+		        <RegistrationForm />
+		    </Provider>
 		</div>
 
 	</div>,

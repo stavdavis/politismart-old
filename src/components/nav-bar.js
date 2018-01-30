@@ -13,7 +13,7 @@ export default class MainNavBar extends React.Component {
         <NavItem className="navbar-app-link" href="#findLawmakers">Find lawmakers</NavItem>
         <NavItem className="navbar-app-link" href="#contribute">Optimize contributions</NavItem>
         <NavItem className="navbar-app-link" href="#stats">Stats</NavItem>
-        <NavItem className="navbar-app-link" href="#signup">Sign up</NavItem>
+        <NavItem className="navbar-app-link" href="#signup">Login / Register</NavItem>
       </Nav>
     );
     return (
